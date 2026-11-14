@@ -61,6 +61,11 @@ const projects = {
       {
         title: 'Sales by Store',
         description: 'Compare completed revenue across retail store locations.',
+        purpose: [
+          "Identifies the highest-performing stores.",
+          "Highlights stores generating relatively low revenue.",
+          "Helps management compare store performance and identify where further analysis may be needed."
+        ],
         image: 'img/lotus/Sales by Store.png'
       },
       {
@@ -89,7 +94,7 @@ const projects = {
       },
       {
         title: 'Year Slicer',
-        description: 'Filter dashboard metrics and charts by reporting year.',
+        description: 'The Year Slicer allows users to interactively filter the dashboard by year, making it easier to explore annual sales performance, revenue trends, store performance, and customer behavior.',
         image: 'img/lotus/Year Slicer.png'
       }
     ],
