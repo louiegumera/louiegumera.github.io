@@ -578,7 +578,39 @@
      <p id="projectModalOverview"></p>
      <div class="project-modal__tags" id="projectModalTags"></div>
      <h3>Key features</h3><ul class="project-modal__checks" id="projectModalFeatures"></ul>
-     <a id="projectModalExternal" class="project-modal__action" target="_blank" rel="noopener noreferrer" hidden>Open GitHub Repository ↗</a>
+     
+     <div class="project-modal__buttons">
+
+      <a id="projectModalExternal"
+        class="project-modal__action"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden>
+        Open GitHub Repository ↗
+      </a>
+
+      <a id="projectModalLive"
+        class="project-modal__action project-modal__action--outline"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 5h5v5M19 5l-9 9"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+        Live Preview
+      </a>
+
+    </div>
+
     </div>
    </div>
    <div class="project-modal__details">

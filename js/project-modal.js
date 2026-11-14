@@ -78,7 +78,8 @@ const projects = {
     ],
 
     // Replace with your actual GitHub repository URL.
-    external: 'https://github.com/louiegumera/Lotus-Retail-Sales-Performance'
+    external: 'https://github.com/louiegumera/Lotus-Retail-Sales-Performance',
+    live: ''
   },
 
   // ==========================================================
@@ -137,7 +138,8 @@ const projects = {
       }
     ],
 
-    external: 'https://public.tableau.com/app/profile/louie.rey.gumera/viz/SuperstoreGiantSales/Dashboard'
+    external: 'Add your verified findings here after reviewing the dashboard, such as which regions or categories performed best.',
+    live: 'https://public.tableau.com/app/profile/louie.rey.gumera/viz/SuperstoreGiantSales/Dashboard'
   }
 };
 
@@ -357,6 +359,18 @@ const projects = {
 
       external.removeAttribute('href');
 
+    }
+
+    // LIVE PROJECT PREVIEW
+
+    const live = el('projectModalLive');
+
+    live.hidden = !project.live;
+
+    if (project.live) {
+      live.href = project.live;
+    } else {
+      live.removeAttribute('href');
     }
 
 
