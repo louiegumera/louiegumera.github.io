@@ -30,7 +30,6 @@ const projects = {
       source: "Kaggle ↗",
       sourceUrl: "https://www.kaggle.com/datasets/abdelrahmanmahmoud22/lotus-group-retail-star-schema-bi",
       rows: "≈12,500",
-      tables: "9",
       author: "Abdelrahman Mahmoud"
     },
 
@@ -243,7 +242,6 @@ const projects = {
           <tbody>
             <tr><th scope="row">Source</th><td></td></tr>
             <tr><th scope="row">Rows</th><td></td></tr>
-            <tr><th scope="row">No. of Tables</th><td></td></tr>
             <tr><th scope="row">Author</th><td></td></tr>
           </tbody>
         </table>
@@ -266,8 +264,7 @@ const projects = {
       }
 
       cells[1].textContent = info.rows;
-      cells[2].textContent = info.tables;
-      cells[3].textContent = info.author;
+      cells[2].textContent = info.author;
     } else {
       datasetContainer.textContent = project.dataset || "";
     }
