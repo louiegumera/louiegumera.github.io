@@ -16,12 +16,6 @@ const projects = {
 
     objective: 'Analyze retail sales performance, track profitability, and understand customer behavior to support data-driven business decisions.',
 
-    approach: [
-      'Cleaned, validated, and transformed retail sales data using SQL.',
-      'Created Power BI measures with DAX for key performance indicators.',
-      'Designed interactive visuals and a year slicer for period comparisons.'
-    ],
-
     features: [
       'Cleaned, validated, and transformed sales data using SQL.',
       'Created KPI cards for completed revenue, gross profit, gross margin, and orders.',
@@ -52,12 +46,17 @@ const projects = {
     breakdown: [
       {
         title: 'KPI Cards',
-        description: 'KPI cards provide a quick overview of completed revenue, gross profit, gross margin, and completed orders for the selected year.',
+        description: "KPI cards provide a quick overview of the business's overall performance for the selected year. They help viewers understand the results before examining the detailed charts.",
         image: 'img/lotus/KPI Cards.png'
       },
       {
         title: 'Monthly Revenue Trends',
-        description: 'The line chart shows how completed revenue changes from month to month.',
+        description: "Line chart shows how revenue changes from month to month. The horizontal axis represents the months, while the vertical axis represents revenue.",
+        purpose: [
+          "Identifies months with the highest and lowest revenue.",
+          "Reveals recurring seasonal patterns or changes in sales.",
+          "Helps management plan inventory, staffing, and promotions."
+        ],
         image: 'img/lotus/Monthly Revenue Trends.png'
       },
       {
@@ -66,8 +65,27 @@ const projects = {
         image: 'img/lotus/Sales by Store.png'
       },
       {
-        title: 'New and Returning Customers',
-        description: 'Compare customer acquisition and repeat purchasing trends over time.',
+        title: 'New and Returning Customer Trends',
+
+        description: 'Multi-series line chart compares the number of newly observed customers with returning customers across months.',
+
+        dataSeries: [
+          {
+            name: 'New Customers',
+            detail: 'Customers whose first recorded completed purchase occurs during the selected period.'
+          },
+          {
+            name: 'Returning Customers',
+            detail: 'Customers with a completed purchase during the period whose first recorded completed purchase occurred earlier.'
+          }
+        ],
+
+        purpose: [
+          'Shows whether the business is attracting new customers.',
+          'Helps monitor repeat purchasing behavior.',
+          'Provides insight into customer acquisition and retention patterns.'
+        ],
+
         image: 'img/lotus/New and Returning Customers.png'
       },
       {
@@ -96,12 +114,6 @@ const projects = {
     tags: ['Tableau'],
 
     objective: 'Present sales and profitability patterns in an accessible dashboard with regional and product-level comparisons.',
-
-    approach: [
-      'Explored sales and profit patterns across the Superstore dataset.',
-      'Built visualizations to compare regions and sales trends.',
-      'Added interactive filters to support deeper exploration.'
-    ],
 
     features: [
       'Sales and profit KPIs.',
@@ -418,19 +430,62 @@ const projects = {
 
       title.textContent = item.title;
 
-
-      // Component description
+      // COMPONENT DESCRIPTION
 
       const description = document.createElement('p');
-
       description.textContent = item.description;
 
+      section.append(label, title, description);
 
-      section.append(
-        label,
-        title,
-        description
-      );
+
+      // DATA SERIES
+
+      if (item.dataSeries?.length) {
+
+        const heading = document.createElement('h5');
+        heading.textContent = 'Data Series:';
+
+        const list = document.createElement('ul');
+        list.className = 'project-modal__details-list';
+
+        item.dataSeries.forEach(series => {
+
+          const li = document.createElement('li');
+
+          const strong = document.createElement('strong');
+          strong.textContent = series.name + ': ';
+
+          li.append(strong, document.createTextNode(series.detail));
+
+          list.append(li);
+
+        });
+
+        section.append(heading, list);
+      }
+
+
+// PURPOSE
+
+if (item.purpose?.length) {
+
+  const heading = document.createElement('h5');
+  heading.textContent = 'Purpose:';
+
+  const list = document.createElement('ul');
+  list.className = 'project-modal__details-list';
+
+  item.purpose.forEach(text => {
+
+    const li = document.createElement('li');
+    li.textContent = text;
+
+    list.append(li);
+
+  });
+
+  section.append(heading, list);
+}
 
 
       // Component screenshot
