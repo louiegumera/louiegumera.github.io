@@ -154,7 +154,6 @@ const projects = {
       }
     ],
 
-    external: 'Add your verified findings here after reviewing the dashboard, such as which regions or categories performed best.',
     live: 'https://public.tableau.com/app/profile/louie.rey.gumera/viz/SuperstoreGiantSales/Dashboard'
   }
 };
