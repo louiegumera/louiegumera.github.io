@@ -29,6 +29,7 @@ const projects = {
     datasetInfo: {
       source: "Kaggle ↗",
       sourceUrl: "https://www.kaggle.com/datasets/abdelrahmanmahmoud22/lotus-group-retail-star-schema-bi",
+      columns: "86",
       rows: "≈12,500",
       author: "Abdelrahman Mahmoud"
     },
@@ -127,7 +128,11 @@ const projects = {
     ],
 
     datasetInfo: {
-      
+      source: "Kaggle ↗",
+      sourceUrl: "https://www.kaggle.com/datasets/vivek468/superstore-dataset-final",
+      columns: "21",
+      rows: "≈9,900",
+      author: "-"
     },
 
     gallery: [
@@ -243,6 +248,7 @@ const projects = {
         <table class="dataset-table">
           <tbody>
             <tr><th scope="row">Source</th><td></td></tr>
+            <tr><th scope="row">Columns</th><td></td></tr>
             <tr><th scope="row">Rows</th><td></td></tr>
             <tr><th scope="row">Author</th><td></td></tr>
           </tbody>
@@ -265,8 +271,9 @@ const projects = {
         cells[0].textContent = info.source;
       }
 
-      cells[1].textContent = info.rows;
-      cells[2].textContent = info.author;
+      cells[1].textContent = info.columns;
+      cells[2].textContent = info.rows;
+      cells[3].textContent = info.author;
     } else {
       datasetContainer.textContent = project.dataset || "";
     }
