@@ -126,8 +126,6 @@ const projects = {
       'Category, Sub-Category, Shipping Mode, and Order Date filters.'
     ],
 
-    insights: 'Add your verified findings here after reviewing the dashboard, such as which regions or categories performed best.',
-
     datasetInfo: {
       
     },
